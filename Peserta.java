@@ -33,8 +33,8 @@ public class Peserta extends User {
 
     public String toString() {
         String info = "";
-        info += "Nama: " + this.getName() + "\n";
-        info += "Jenjang Pendidikan: " + this.getJenjangPendidikan() + "\n";
+        info += "Nama: " + getName() + "\n";
+        info += "Jenjang Pendidikan: " + getJenjangPendidikan() + "\n";
         info += "Daftar Kursus:\n";
         for (Kursus kursus : daftarKursus) {
             info += "- " + kursus.getMataPelajaran().getNama() + " oleh " + kursus.getInstruktur().getNama() + "\n";
