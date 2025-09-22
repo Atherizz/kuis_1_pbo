@@ -6,6 +6,7 @@ public class Kursus {
     private Instruktur instruktur;
     private ArrayList<Peserta> daftarPeserta;
     private boolean isBerbayar;
+    
 
     public Kursus(String mataPelajaran, Instruktur instruktur, boolean isBerbayar) {
         this.mataPelajaran = mataPelajaran;
