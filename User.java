@@ -23,6 +23,10 @@ public class User {
         return saldo;
     }
 
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    } 
+
     public void setUsername(String name) {
         this.name = name;
     }

@@ -10,9 +10,12 @@ public class Peserta extends User {
         this.daftarKursus = new ArrayList<>();
     }
 
-
     public String getJenjangPendidikan() {
         return jenjangPendidikan;
+    }
+
+    public ArrayList<Kursus> getDaftarKursus() {
+        return daftarKursus;
     }
 
 
