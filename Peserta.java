@@ -27,7 +27,14 @@ public class Peserta extends User {
         if (kursus.getIsBerbayar()) {
             System.out.println("Kursus " + kursus.getMataPelajaran().getNama() + " adalah kursus berbayar, pastikan anda memiliki saldo yang cukup");
             System.out.println("Harga : " + kursus.getHarga());
-
+            Pembayaran bayar = new Pembayaran(this, kursus, kursus.getInstruktur());
+            bayar.prosesPembayaran();
+            if (bayar.getStatus()) {
+                System.out.println("Kursus " + kursus.getMataPelajaran().getNama() + " berhasil ditambahkan!");
+            } else {
+                System.out.println("Pembayaran gagal. Kursus tidak dapat ditambahkan.");
+            }            
+            
         } else {
             daftarKursus.add(kursus);
             kursus.getDaftarPeserta().add(this);
@@ -35,6 +42,7 @@ public class Peserta extends User {
         }
     }
 
+    
     public String toString() {
         String info = "";
         info += "Nama: " + getName() + "\n";
@@ -45,12 +53,5 @@ public class Peserta extends User {
         }
         return info;
     }
-
-    
-
-
-
-
-    
 
 }

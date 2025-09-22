@@ -1,11 +1,18 @@
+import java.util.ArrayList;
+
 public class Instruktur extends User {
     private String nama;
     private String keahlian;
+    private ArrayList<Kursus> daftarKursus;
 
     Instruktur(String username, String email, String password, String nama, String keahlian) {
         super(username, email, password);
         this.nama = nama;
         this.keahlian = keahlian;
+        this.daftarKursus = new ArrayList<>();
+    }
+    public ArrayList<Kursus> getDaftarKursus() {
+        return daftarKursus;
     }
     
     public String getNama() {
@@ -31,7 +38,10 @@ public class Instruktur extends User {
         System.out.println("Email: " + getEmail());
     }
 
-    
+    public void tambahKursus(Kursus kursus){
+        daftarKursus.add(kursus);
+        kursus.setInstruktur(this);
+    }
 
 
 }
