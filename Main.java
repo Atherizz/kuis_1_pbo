@@ -14,7 +14,6 @@ public class Main {
         Instruktur instruktur1 = new Instruktur("andi123", "andi@mail.com", "passA", "Andi", "Pemrograman Java");
         Instruktur instruktur2 = new Instruktur("rani456", "rani@mail.com", "passB", "Rani", "Desain UI/UX");
 
-        
 
         ArrayList<User> daftarUsers = new ArrayList<>();
         daftarUsers.add(peserta1);
@@ -55,8 +54,8 @@ public class Main {
                 pilih=sc.nextInt();
 
                 switch (pilih) {
-                case 1:
-                    
+                case 1: 
+                        
                     break;
                 
                 case 2:

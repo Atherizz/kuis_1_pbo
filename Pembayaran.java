@@ -59,6 +59,8 @@ public class Pembayaran {
     private void transferKeInstruktur() {
         int bagiInstruktur = (int) (jumlah * 0.7);
         instruktur.setSaldo(instruktur.getSaldo() + bagiInstruktur);
+        int bagiSistem = kursus.getHarga() - bagiInstruktur;
+        DompetSistem.tambahSaldo(bagiSistem);
     }
 
     // --- getter ---
