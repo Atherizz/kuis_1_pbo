@@ -30,6 +30,7 @@ public class Peserta extends User {
 
         } else {
             daftarKursus.add(kursus);
+            kursus.getDaftarPeserta().add(this);
             System.out.println("Kursus " + kursus.getMataPelajaran().getNama() + " berhasil ditambahkan!");
         }
     }
