@@ -27,7 +27,7 @@ public class Instruktur extends User {
     public void tampilkanInfo() {
         System.out.println("Nama Instruktur: " + nama);
         System.out.println("Keahlian: " + keahlian);
-        System.out.println("Username: " + getUsername());
+        System.out.println("Username: " + getName());
         System.out.println("Email: " + getEmail());
     }
 
