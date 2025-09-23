@@ -18,14 +18,14 @@ public class Peserta extends User {
         return daftarKursus;
     }
 
-
     public void setJenjangPendidikan(String jenjangPendidikan) {
         this.jenjangPendidikan = jenjangPendidikan;
     }
 
     public void pendaftaranKursus(Kursus kursus) {
         if (kursus.getIsBerbayar()) {
-            System.out.println("Kursus " + kursus.getMataPelajaran().getNama() + " adalah kursus berbayar, pastikan anda memiliki saldo yang cukup");
+            System.out.println("Kursus " + kursus.getMataPelajaran().getNama()
+                    + " adalah kursus berbayar, pastikan anda memiliki saldo yang cukup");
             System.out.println("Harga : " + kursus.getHarga());
             Pembayaran bayar = new Pembayaran(this, kursus, kursus.getInstruktur());
             bayar.prosesPembayaran();
@@ -33,16 +33,21 @@ public class Peserta extends User {
                 System.out.println("Kursus " + kursus.getMataPelajaran().getNama() + " berhasil ditambahkan!");
             } else {
                 System.out.println("Pembayaran gagal. Kursus tidak dapat ditambahkan.");
-            }            
-            
+            }
+
         } else {
+
+            if (this.getDaftarKursus().contains(kursus) && kursus.getDaftarPeserta().contains(this)) {
+                System.out.println("Anda sudah terdaftar pada kursus ini!");
+                return;
+
+            }
             daftarKursus.add(kursus);
             kursus.getDaftarPeserta().add(this);
             System.out.println("Kursus " + kursus.getMataPelajaran().getNama() + " berhasil ditambahkan!");
         }
     }
 
-    
     public String toString() {
         String info = "";
         info += "Nama: " + getName() + "\n";

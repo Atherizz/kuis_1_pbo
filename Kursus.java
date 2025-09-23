@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 
 public class Kursus {
+
+    private int id;
+    private String judul;
     private MataPelajaran mataPelajaran;
     private ArrayList<Konten> daftarKonten;
     private Instruktur instruktur;
@@ -8,8 +11,9 @@ public class Kursus {
     private boolean isBerbayar;
     private int harga = 0;
 
-
-    public Kursus(MataPelajaran mataPelajaran, Instruktur instruktur, boolean isBerbayar) {
+    public Kursus(int id, String judul, MataPelajaran mataPelajaran, Instruktur instruktur, boolean isBerbayar) {
+        this.id = id;
+        this.judul = judul;
         this.mataPelajaran = mataPelajaran;
         this.instruktur = instruktur;
         this.isBerbayar = isBerbayar;
@@ -19,6 +23,22 @@ public class Kursus {
 
     public int getHarga() {
         return harga;
+    }
+
+    public String getJudul() {
+        return judul;
+    }
+
+    public void setJudul(String judul) {
+        this.judul = judul;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setHarga(int harga) {
@@ -49,6 +69,10 @@ public class Kursus {
         return daftarPeserta;
     }
 
+    public ArrayList<Konten> getDaftarKonten() {
+        return daftarKonten;
+    }
+
     public void setBerbayar(boolean berbayar) {
         isBerbayar = berbayar;
     }
@@ -60,14 +84,12 @@ public class Kursus {
     public String toString() {
         String info = "";
         info += "Mata Pelajaran: " + mataPelajaran.getNama() + "\n";
-        info += "Instruktur: " + instruktur.getNama() + "\n";   
+        info += "Instruktur: " + instruktur.getNama() + "\n";
         info += "Daftar Konten:\n";
         for (Konten konten : daftarKonten) {
             info += "- " + konten.getJudul() + "\n";
         }
         return info;
     }
-
-    
 
 }

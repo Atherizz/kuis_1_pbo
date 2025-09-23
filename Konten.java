@@ -29,6 +29,12 @@ public class Konten {
         this.kursus = kursus;
     }
 
+    public void tampilkanKonten() {
+    System.out.println("Judul : " + this.getJudul());
+    System.out.println("Konten : ");
+    System.out.println(this.getDeskripsi());
+}
+
     public void setDeskripsi(String deskripsi){
         this.deskripsi = deskripsi;
     }

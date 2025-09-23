@@ -13,8 +13,13 @@ public int getDurasi() {
     return durasi;
 }
 
-public void tampilkan(){
-    System.out.println("Video: " + getJudul() + " dengan durasi (" + durasi + " Menit) " + getDeskripsi());
+@Override
+public void tampilkanKonten() {
+    System.out.println("Judul : " + super.getJudul());
+    System.out.println("Konten : ");
+    System.out.println(super.getDeskripsi() + " | durasi : " + this.getDurasi());
 }
+
+
 
 }
