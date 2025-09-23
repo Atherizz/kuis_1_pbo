@@ -9,6 +9,7 @@ public class Pembayaran {
     public Pembayaran(Peserta peserta, Kursus kursus, Instruktur instruktur) {
         this.peserta = peserta;
         this.kursus = kursus;
+        this.instruktur = instruktur;
         this.jumlah = kursus.getHarga();
         this.status = false; // default: belum dibayar
     }
@@ -18,6 +19,7 @@ public class Pembayaran {
         if (!cekSaldo()) {
             this.status = false;
             System.out.println("Saldo tidak cukup. Pembayaran gagal.");
+            System.out.println("Saldo anda : " + this.peserta.getSaldo());
             return;
         }
 
@@ -36,6 +38,7 @@ public class Pembayaran {
         System.out.println("Anda sudah terdaftar pada kursus ini!");
         return;
     }
+    
         potongSaldoPeserta();
         transferKeInstruktur();
         this.status = true;
