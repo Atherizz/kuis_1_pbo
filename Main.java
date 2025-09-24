@@ -55,46 +55,46 @@ public class Main {
         daftarKursus.get(9).setHarga(450000);
 
         Kursus k1 = daftarKursus.get(0);
-        Video c1 = new Video("Video: Intro Java", k1, "Pengenalan Java & tooling", 600);
+        Video c1 = new Video(1, "Video: Intro Java", k1, "Pengenalan Java & tooling", 600);
         k1.getDaftarKonten().add(c1);
 
         Kursus k2 = daftarKursus.get(1);
-        Kuis c2 = new Kuis("Kuis: OOP Dasar", k2, "Uji konsep class, object, dan encapsulation", 12);
+        Kuis c2 = new Kuis(2, "Kuis: OOP Dasar", k2, "Uji konsep class, object, dan encapsulation", 12);
         k2.getDaftarKonten().add(c2);
 
         Kursus k3 = daftarKursus.get(2);
-        Artikel c3 = new Artikel("Artikel: Prinsip UI/UX", k3, "Heuristics dan user flow dasar",
+        Artikel c3 = new Artikel(3, "Artikel: Prinsip UI/UX", k3, "Heuristics dan user flow dasar",
                 k3.getInstruktur().getNama());
         k3.getDaftarKonten().add(c3);
 
         Kursus k4 = daftarKursus.get(3);
-        Video c4 = new Video("Video: Layout Mobile Grid", k4, "Grid system & spacing scale", 630);
+        Video c4 = new Video(4, "Video: Layout Mobile Grid", k4, "Grid system & spacing scale", 630);
         k4.getDaftarKonten().add(c4);
 
         Kursus k5 = daftarKursus.get(4);
-        Artikel c5 = new Artikel("Artikel: Indexing MySQL", k5, "EXPLAIN, index, dan optimasi query",
+        Artikel c5 = new Artikel(5, "Artikel: Indexing MySQL", k5, "EXPLAIN, index, dan optimasi query",
                 k5.getInstruktur().getNama());
         k5.getDaftarKonten().add(c5);
 
         Kursus k6 = daftarKursus.get(5);
-        Kuis c6 = new Kuis("Kuis: Algoritma Dasar", k6, "Seleksi, perulangan, array sederhana", 15);
+        Kuis c6 = new Kuis(6, "Kuis: Algoritma Dasar", k6, "Seleksi, perulangan, array sederhana", 15);
         k6.getDaftarKonten().add(c6);
 
         Kursus k7 = daftarKursus.get(6);
-        Video c7 = new Video("Video: React Hooks 101", k7, "useState, useEffect, lifting state up", 700);
+        Video c7 = new Video(7, "Video: React Hooks 101", k7, "useState, useEffect, lifting state up", 700);
         k7.getDaftarKonten().add(c7);
 
         Kursus k8 = daftarKursus.get(7);
-        Artikel c8 = new Artikel("Artikel: REST API Spring Boot", k8, "Controller, service, repository pattern",
+        Artikel c8 = new Artikel(8, "Artikel: REST API Spring Boot", k8, "Controller, service, repository pattern",
                 k8.getInstruktur().getNama());
         k8.getDaftarKonten().add(c8);
 
         Kursus k9 = daftarKursus.get(8);
-        Video c9 = new Video("Video: ML untuk Pemula", k9, "Supervised vs unsupervised, dataset & metric", 900);
+        Video c9 = new Video(9, "Video: ML untuk Pemula", k9, "Supervised vs unsupervised, dataset & metric", 900);
         k9.getDaftarKonten().add(c9);
 
         Kursus k10 = daftarKursus.get(9);
-        Kuis c10 = new Kuis("Kuis: Prototyping UI/UX", k10, "Wireframe, flow, dan usability", 8);
+        Kuis c10 = new Kuis(10, "Kuis: Prototyping UI/UX", k10, "Wireframe, flow, dan usability", 8);
         k10.getDaftarKonten().add(c10);
 
         System.out.println("=======LOGIN=========");
