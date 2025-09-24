@@ -1,8 +1,8 @@
 public class Kuis extends Konten{
     private int jumlahSoal;
 
-    public Kuis(String judul, Kursus kursus, String deskripsi, int jumlahSoal) {
-        super(judul, kursus, deskripsi);
+    public Kuis(int id, String judul, Kursus kursus, String deskripsi, int jumlahSoal) {
+        super(id, judul, kursus, deskripsi);
         this.jumlahSoal = jumlahSoal;
     }
 
@@ -21,4 +21,7 @@ public class Kuis extends Konten{
         return jumlahSoal;
     }
 
+    public void tampilkan(){
+        System.out.println("Kuis: " + getJudul() + " dengan jumlah soal (" + jumlahSoal + " Soal) " + getDeskripsi());
+    }
 }

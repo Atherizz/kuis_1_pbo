@@ -1,8 +1,8 @@
 public class Video extends Konten {
     private int durasi;
 
-public Video(String judul, Kursus kursus, String deskripsi, int durasi) {
-    super(judul, kursus, deskripsi);
+public Video(int id, String judul, Kursus kursus, String deskripsi, int durasi) {
+    super(id, judul, kursus, deskripsi);
     this.durasi = durasi;
 }
 
@@ -20,6 +20,8 @@ public void tampilkanKonten() {
     System.out.println(super.getDeskripsi() + " | durasi : " + this.getDurasi());
 }
 
-
+public void tampilkan(){
+    System.out.println("Video: " + getJudul() + " dengan durasi (" + durasi + " Menit) " + getDeskripsi());
+}
 
 }
