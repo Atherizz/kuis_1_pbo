@@ -82,14 +82,15 @@ public class Kursus {
     }
 
     public String toString() {
-        String info = "";
-        info += "Mata Pelajaran: " + mataPelajaran.getNama() + "\n";
-        info += "Instruktur: " + instruktur.getNama() + "\n";
-        info += "Daftar Konten:\n";
+        // Asumsikan InisiasiObjek memiliki method static getMataPelajaran()
+        MataPelajaran mp = InisiasiObjek.getMataPelajaran();
+        System.out.print("Mata Pelajaran: " + (mp != null ? mp.getNama() : "-") + "\n");
+        System.out.print("Instruktur: " + (instruktur != null ? instruktur.getNama() : "-") + "\n");
+        System.out.print("Daftar Konten:\n");
         for (Konten konten : daftarKonten) {
-            info += "- " + konten.getJudul() + "\n";
+            System.out.print("- " + konten.getJudul() + "\n");
         }
-        return info;
+        return "";
     }
 
 }
