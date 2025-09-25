@@ -13,8 +13,8 @@ public class Konten {
         return judul;
     }
 
-    public String getKurus(){
-        return kursus.getMataPelajaran();
+    public Kursus getKurus(){
+        return kursus;
     }
 
     public String getDeskripsi(){
