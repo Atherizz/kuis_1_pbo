@@ -55,6 +55,31 @@ public class InisiasiObjek {
                 Kursus k9 = new Kursus(9, "Machine Learning Dasar", mp5, instruktur1, true);
                 Kursus k10 = new Kursus(10, "Evaluasi Model ML", mp5, instruktur1, true);
 
+                // === Hubungkan ke instruktur + daftarkan ke daftarKursus (global) ===
+                // Andi (instruktur1)
+                instruktur1.tambahKursus(k1);
+                daftarKursus.add(k1);
+                instruktur1.tambahKursus(k2);
+                daftarKursus.add(k2);
+                instruktur1.tambahKursus(k7);
+                daftarKursus.add(k7);
+                instruktur1.tambahKursus(k8);
+                daftarKursus.add(k8);
+                instruktur1.tambahKursus(k9);
+                daftarKursus.add(k9);
+                instruktur1.tambahKursus(k10);
+                daftarKursus.add(k10);
+
+                // Rani (instruktur2)
+                instruktur2.tambahKursus(k3);
+                daftarKursus.add(k3);
+                instruktur2.tambahKursus(k4);
+                daftarKursus.add(k4);
+                instruktur2.tambahKursus(k5);
+                daftarKursus.add(k5);
+                instruktur2.tambahKursus(k6);
+                daftarKursus.add(k6);
+
                 daftarKursus.add(k1);
                 daftarKursus.add(k2);
                 daftarKursus.add(k3);
@@ -80,71 +105,103 @@ public class InisiasiObjek {
                 int nextKontenId = 1;
 
                 // --- Java (mp1): k1, k2 ---
-                k1.getDaftarKonten().add(
-                                new Video(nextKontenId++, "Video: Intro Java", k1, "Pengenalan Java & tooling", 600));
-                k1.getDaftarKonten()
-                                .add(new Kuis(nextKontenId++, "Kuis: Variabel & Tipe Data", k1,
-                                                "Dasar tipe data & operator", 12));
+                Video v1 = new Video(nextKontenId++, "Video: Intro Java", k1, "Pengenalan Java & tooling", 600);
+                k1.getDaftarKonten().add(v1);
+                daftarKonten.add(v1);
 
-                k2.getDaftarKonten().add(new Artikel(nextKontenId++, "Artikel: OOP Lanjutan", k2,
-                                "Inheritance, polymorphism, abstraction", k2.getInstruktur().getNama()));
-                k2.getDaftarKonten().add(
-                                new Video(nextKontenId++, "Video: Collections & Generics", k2,
-                                                "List, Map, Set, generic type", 720));
+                Kuis q1 = new Kuis(nextKontenId++, "Kuis: Variabel & Tipe Data", k1, "Dasar tipe data & operator", 12);
+                k1.getDaftarKonten().add(q1);
+                daftarKonten.add(q1);
+
+                Artikel a2 = new Artikel(nextKontenId++, "Artikel: OOP Lanjutan", k2,
+                                "Inheritance, polymorphism, abstraction", k2.getInstruktur().getNama());
+                k2.getDaftarKonten().add(a2);
+                daftarKonten.add(a2);
+
+                Video v2 = new Video(nextKontenId++, "Video: Collections & Generics", k2,
+                                "List, Map, Set, generic type", 720);
+                k2.getDaftarKonten().add(v2);
+                daftarKonten.add(v2);
 
                 // --- UI/UX (mp2): k3, k4 ---
-                k3.getDaftarKonten().add(new Artikel(nextKontenId++, "Artikel: Heuristics Nielsen", k3,
-                                "10 heuristics & contoh", k3.getInstruktur().getNama()));
-                k3.getDaftarKonten().add(
-                                new Video(nextKontenId++, "Video: User Flow Dasar", k3,
-                                                "Task flow & wireframe low-fidelity", 540));
+                Artikel a3 = new Artikel(nextKontenId++, "Artikel: Heuristics Nielsen", k3, "10 heuristics & contoh",
+                                k3.getInstruktur().getNama());
+                k3.getDaftarKonten().add(a3);
+                daftarKonten.add(a3);
 
-                k4.getDaftarKonten()
-                                .add(new Video(nextKontenId++, "Video: Wireframe ke Prototype", k4,
-                                                "Low-fi → hi-fi di Figma", 700));
-                k4.getDaftarKonten()
-                                .add(new Kuis(nextKontenId++, "Kuis: Usability Metrics", k4,
-                                                "SUS, task success, time-on-task", 8));
+                Video v3 = new Video(nextKontenId++, "Video: User Flow Dasar", k3, "Task flow & wireframe low-fidelity",
+                                540);
+                k3.getDaftarKonten().add(v3);
+                daftarKonten.add(v3);
+
+                Video v4 = new Video(nextKontenId++, "Video: Wireframe ke Prototype", k4, "Low-fi → hi-fi di Figma",
+                                700);
+                k4.getDaftarKonten().add(v4);
+                daftarKonten.add(v4);
+
+                Kuis q4 = new Kuis(nextKontenId++, "Kuis: Usability Metrics", k4, "SUS, task success, time-on-task", 8);
+                k4.getDaftarKonten().add(q4);
+                daftarKonten.add(q4);
 
                 // --- Mobile Development (mp3): k5, k6 ---
-                k5.getDaftarKonten().add(
-                                new Video(nextKontenId++, "Video: Arsitektur Aplikasi Mobile", k5,
-                                                "Activity/Fragment, MVVM", 660));
-                k5.getDaftarKonten().add(new Artikel(nextKontenId++, "Artikel: Responsive Layout", k5,
-                                "Density, constraint, adaptive UI", k5.getInstruktur().getNama()));
+                Video v5 = new Video(nextKontenId++, "Video: Arsitektur Aplikasi Mobile", k5, "Activity/Fragment, MVVM",
+                                660);
+                k5.getDaftarKonten().add(v5);
+                daftarKonten.add(v5);
 
-                k6.getDaftarKonten().add(
-                                new Video(nextKontenId++, "Video: Kotlin Dasar", k6, "Syntax, nullable, when", 620));
-                k6.getDaftarKonten()
-                                .add(new Kuis(nextKontenId++, "Kuis: Kotlin Fundamentals", k6,
-                                                "Null-safety, collections", 10));
+                Artikel a5 = new Artikel(nextKontenId++, "Artikel: Responsive Layout", k5,
+                                "Density, constraint, adaptive UI", k5.getInstruktur().getNama());
+                k5.getDaftarKonten().add(a5);
+                daftarKonten.add(a5);
+
+                Video v6 = new Video(nextKontenId++, "Video: Kotlin Dasar", k6, "Syntax, nullable, when", 620);
+                k6.getDaftarKonten().add(v6);
+                daftarKonten.add(v6);
+
+                Kuis q6 = new Kuis(nextKontenId++, "Kuis: Kotlin Fundamentals", k6, "Null-safety, collections", 10);
+                k6.getDaftarKonten().add(q6);
+                daftarKonten.add(q6);
 
                 // --- Database MySQL (mp4): k7, k8 ---
-                k7.getDaftarKonten().add(new Artikel(nextKontenId++, "Artikel: Normalisasi Singkat", k7,
-                                "1NF–3NF & functional dependency", k7.getInstruktur().getNama()));
-                k7.getDaftarKonten()
-                                .add(new Video(nextKontenId++, "Video: JOINs Praktis", k7,
-                                                "INNER/LEFT/RIGHT/FULL (simulasi)", 780));
+                Artikel a7 = new Artikel(nextKontenId++, "Artikel: Normalisasi Singkat", k7,
+                                "1NF–3NF & functional dependency", k7.getInstruktur().getNama());
+                k7.getDaftarKonten().add(a7);
+                daftarKonten.add(a7);
 
-                k8.getDaftarKonten().add(new Artikel(nextKontenId++, "Artikel: Index & EXPLAIN", k8,
-                                "BTREE, cover index, query plan", k8.getInstruktur().getNama()));
-                k8.getDaftarKonten()
-                                .add(new Video(nextKontenId++, "Video: Optimasi Query", k8, "Profiling, slow query log",
-                                                720));
+                Video v7 = new Video(nextKontenId++, "Video: JOINs Praktis", k7, "INNER/LEFT/RIGHT/FULL (simulasi)",
+                                780);
+                k7.getDaftarKonten().add(v7);
+                daftarKonten.add(v7);
+
+                Artikel a8 = new Artikel(nextKontenId++, "Artikel: Index & EXPLAIN", k8,
+                                "BTREE, cover index, query plan", k8.getInstruktur().getNama());
+                k8.getDaftarKonten().add(a8);
+                daftarKonten.add(a8);
+
+                Video v8 = new Video(nextKontenId++, "Video: Optimasi Query", k8, "Profiling, slow query log", 720);
+                k8.getDaftarKonten().add(v8);
+                daftarKonten.add(v8);
 
                 // --- Machine Learning (mp5): k9, k10 ---
-                k9.getDaftarKonten()
-                                .add(new Video(nextKontenId++, "Video: Supervised vs Unsupervised", k9,
-                                                "Task, dataset, metric", 900));
-                k9.getDaftarKonten().add(new Artikel(nextKontenId++, "Artikel: Data Splitting & Leakage", k9,
-                                "Train/val/test, stratified split", k9.getInstruktur().getNama()));
+                Video v9 = new Video(nextKontenId++, "Video: Supervised vs Unsupervised", k9, "Task, dataset, metric",
+                                900);
+                k9.getDaftarKonten().add(v9);
+                daftarKonten.add(v9);
 
-                k10.getDaftarKonten()
-                                .add(new Artikel(nextKontenId++, "Artikel: Evaluasi Model", k10,
-                                                "Accuracy vs F1, ROC-AUC",
-                                                k10.getInstruktur().getNama()));
-                k10.getDaftarKonten()
-                                .add(new Video(nextKontenId++, "Video: Confusion Matrix", k10,
-                                                "TP/FP/TN/FN & interpretasi", 660));
+                Artikel a9 = new Artikel(nextKontenId++, "Artikel: Data Splitting & Leakage", k9,
+                                "Train/val/test, stratified split", k9.getInstruktur().getNama());
+                k9.getDaftarKonten().add(a9);
+                daftarKonten.add(a9);
+
+                Artikel a10 = new Artikel(nextKontenId++, "Artikel: Evaluasi Model", k10, "Accuracy vs F1, ROC-AUC",
+                                k10.getInstruktur().getNama());
+                k10.getDaftarKonten().add(a10);
+                daftarKonten.add(a10);
+
+                Video v10 = new Video(nextKontenId++, "Video: Confusion Matrix", k10, "TP/FP/TN/FN & interpretasi",
+                                660);
+                k10.getDaftarKonten().add(v10);
+                daftarKonten.add(v10);
+
         }
 }
