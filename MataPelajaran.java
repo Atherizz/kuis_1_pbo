@@ -2,29 +2,24 @@ import java.util.ArrayList;
 
 public class MataPelajaran {
     private String nama;
-    private String deskripsi;
+    private int id;
     private ArrayList<Kursus> listKursus; 
 
-    public MataPelajaran(String nama, String deskripsi) {
+    public MataPelajaran(int id, String nama) {
+        this.id = id;
         this.nama = nama;
-        this.deskripsi = deskripsi;
-        this.listKursus = new ArrayList<>();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNama() {
         return nama;
     }
 
-    public String getDeskripsi() {
-        return deskripsi;
-    }
-
     public void setNama(String nama) {
         this.nama = nama;
-    }
-
-    public void setDeskripsi(String deskripsi) {
-        this.deskripsi = deskripsi;
     }
 
     public void tambahKursus(Kursus kursus) {
@@ -36,7 +31,7 @@ public class MataPelajaran {
     }
 
     public String toString() {
-        String info = "Mata Pelajaran: " + nama + "\nDeskripsi: " + deskripsi + "\nDaftar Kursus:\n";
+        String info = "Mata Pelajaran: " + nama  + "\nDaftar Kursus:\n";
         for (Kursus kursus : listKursus) {
             info += "- " + kursus.getMataPelajaran().getNama() + " oleh " + kursus.getInstruktur().getNama() + "\n";
         }

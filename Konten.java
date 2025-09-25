@@ -1,19 +1,25 @@
 public class Konten {
+    private int id;
     private String judul;
     private Kursus kursus;
     private String deskripsi;
 
-    public Konten(String judul, Kursus kursus, String deskripsi) {
+    public Konten(int id, String judul, Kursus kursus, String deskripsi) {
+        this.id = id;
         this.judul = judul;
         this.kursus = kursus;
         this.deskripsi = deskripsi;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getJudul(){
         return judul;
     }
 
-    public Kursus getKurus(){
+    public Kursus getKursus(){
         return kursus;
     }
 
@@ -28,6 +34,12 @@ public class Konten {
     public void setKursus(Kursus kursus){
         this.kursus = kursus;
     }
+
+    public void tampilkanKonten() {
+    System.out.println("Judul : " + this.getJudul());
+    System.out.println("Konten : ");
+    System.out.println(this.getDeskripsi());
+}
 
     public void setDeskripsi(String deskripsi){
         this.deskripsi = deskripsi;
