@@ -82,14 +82,14 @@ public class Kursus {
     }
 
     public String toString() {
-        String info = "";
-        info += "Mata Pelajaran: " + mataPelajaran.getNama() + "\n";
-        info += "Instruktur: " + instruktur.getNama() + "\n";
-        info += "Daftar Konten:\n";
-        for (Konten konten : daftarKonten) {
-            info += "- " + konten.getJudul() + "\n";
-        }
-        return info;
+        System.out.printf("%-3d | %-30s | %-18s | %-10s | %-10s",
+            id,
+            judul,
+            mataPelajaran != null ? mataPelajaran.getNama() : "-",
+            instruktur != null ? instruktur.getNama() : "-",
+            isBerbayar ? "Rp" + harga : "Gratis"
+            );
+        return "";
     }
 
 }
