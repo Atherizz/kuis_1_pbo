@@ -81,14 +81,30 @@ public class Kursus {
         daftarKonten.add(konten);
     }
 
+    public void hapusKonten(int idKonten, ArrayList<Konten> listKonten) {
+        Konten target = null;
+        for (Konten k : daftarKonten) {
+            if (k.getId() == idKonten) {
+                target = k;
+                break;
+            }
+        }
+        if (target != null) {
+            daftarKonten.remove(target);
+            listKonten.remove(target);
+            System.out.println("Konten berhasil dihapus: " + target.getJudul());
+        } else {
+            System.out.println("Konten tidak ditemukan di kursus ini!");
+        }
+    }
+
     public String toString() {
         System.out.printf("%-3d | %-30s | %-18s | %-10s | %-10s",
-            id,
-            judul,
-            mataPelajaran != null ? mataPelajaran.getNama() : "-",
-            instruktur != null ? instruktur.getNama() : "-",
-            isBerbayar ? "Rp" + harga : "Gratis"
-            );
+                id,
+                judul,
+                mataPelajaran != null ? mataPelajaran.getNama() : "-",
+                instruktur != null ? instruktur.getNama() : "-",
+                isBerbayar ? "Rp" + harga : "Gratis");
         return "";
     }
 

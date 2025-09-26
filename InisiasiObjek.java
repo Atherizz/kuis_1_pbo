@@ -63,27 +63,21 @@ public class InisiasiObjek {
                 // === Hubungkan ke instruktur + daftarkan ke daftarKursus (global) ===
                 // Andi (instruktur1)
                 instruktur1.tambahKursus(k1);
-                daftarKursus.add(k1);
                 instruktur1.tambahKursus(k2);
-                daftarKursus.add(k2);
+
                 instruktur1.tambahKursus(k7);
-                daftarKursus.add(k7);
+
                 instruktur1.tambahKursus(k8);
-                daftarKursus.add(k8);
+
                 instruktur1.tambahKursus(k9);
-                daftarKursus.add(k9);
+
                 instruktur1.tambahKursus(k10);
-                daftarKursus.add(k10);
 
                 // Rani (instruktur2)
                 instruktur2.tambahKursus(k3);
-                daftarKursus.add(k3);
                 instruktur2.tambahKursus(k4);
-                daftarKursus.add(k4);
                 instruktur2.tambahKursus(k5);
-                daftarKursus.add(k5);
                 instruktur2.tambahKursus(k6);
-                daftarKursus.add(k6);
 
                 daftarKursus.add(k1);
                 daftarKursus.add(k2);
